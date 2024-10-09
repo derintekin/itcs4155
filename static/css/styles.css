@@ -2,4 +2,5 @@ body p {
     color: #0000ff;
     font-size: larger;  
     font-family: 'Courier New', Courier, monospace;
+    font-weight: 100;
 }
