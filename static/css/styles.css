@@ -1,4 +1,5 @@
 body p {
     color: #0000ff;
-    font-size: larger;
+    font-size: larger;  
+    font-family: 'Courier New', Courier, monospace;
 }
