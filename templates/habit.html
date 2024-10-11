@@ -1,48 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Habit Tracking</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-</head>
-<body>
+{% extends 'base.html' %}
 
-<div class="container-fluid">
-    <header class="header">
-        <div class="container">
-            <h1 class="title text-center">49er Health Tracker</h1>
-        </div>
-    </header>
+{% block title %}Habit Tracking - 49er Health Tracker{% endblock %}
 
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-links">
-                <a class="nav-item" href="{{ url_for('habit_tracking') }}">Habit Tracking</a>
-                <a class="nav-item" href="{{ url_for('nutrition_tracking') }}">Nutrition Tracking</a>
-                <a class="nav-item" href="{{ url_for('fitness_tracking') }}">Fitness Tracking</a>
-                <a class="nav-item" href="{{ url_for('fitness_guide') }}">Fitness Guide</a>
-            </div>
-        </div>
-    </nav>
-
-    <div class="content">
-        <section id="habit-tracking" class="tracker-section">
-            <h2>Habit Tracking</h2>
-            <p>Track your daily screen time, sleep, and harmful habits.</p>
-            <ul>
-                <li>Screen Time: Track your daily screen time and manage digital usage.</li>
-                <li>Sleep: Monitor your sleep patterns and improve your rest.</li>
-                <li>Harmful Habits: Identify and break harmful habits.</li>
-            </ul>
-        </section>
-    </div>
-
-    <footer>
-        <p class="text-center">© 2024 49er Health Tracker</p>
-    </footer>
-</div>
-
-<script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
-</body>
-</html>
+{% block content %}
+    <h2>Habit Tracking</h2>
+    <input type="text" id="habit-input" placeholder="Enter a new habit">
+    <button id="add-habit-btn">Add Habit</button>
+    <ul id="habit-list"></ul>
+{% endblock %}

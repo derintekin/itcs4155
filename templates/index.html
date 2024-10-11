@@ -1,3 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}49er Health Tracker{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+<p>Hello World!</p>
+
+{% endblock %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +16,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
 <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}?v=1">
+<script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+
 </head>
 <body>
 
@@ -18,9 +31,9 @@
     <nav class="navbar">
         <div class="container">
             <div class="nav-links">
-                <a class="nav-item" href="{{ url_for('habit_tracking') }}">Habit Tracking</a>
-                <a class="nav-item" href="{{ url_for('nutrition_tracking') }}">Nutrition Tracking</a>
-                <a class="nav-item" href="{{ url_for('fitness_tracking') }}">Fitness Tracking</a>
+                <a class="nav-item" href="{{ url_for('habit') }}">Habit Tracking</a>
+                <a class="nav-item" href="{{ url_for('nutritiontracking') }}">Nutrition Tracking</a>
+                <a class="nav-item" href="{{ url_for('fitnesstracking') }}">Fitness Tracking</a>
                 <a class="nav-item" href="{{ url_for('fitness_guide') }}">Fitness Guide</a>
             </div>
         </div>
