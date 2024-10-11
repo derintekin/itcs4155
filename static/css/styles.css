@@ -1,4 +1,63 @@
-body p {
-    color: #0000ff;
-    font-size: larger;  
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+}
+
+
+.header {
+    background-color: #004d00; 
+    padding: 20px;
+    text-align: center;
+}
+
+.title {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+
+.navbar {
+    padding: 1rem;
+    text-align: center;
+    background-color: #004d00; 
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+}
+
+.nav-item {
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.nav-item:hover {
+    text-decoration: underline;
+}
+
+
+.nav-item {
+    padding: 10px 20px;
+    background-color: #008000; 
+    color: white;
+    border: 2px solid #004d00;
+    border-radius: 5px; 
+    text-align: center;
+}
+
+.nav-item:hover {
+    background-color: #005900; 
+    color: white;
+}
+
+.tracker-section {
+    background-color: white;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Tracking</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+<div class="container-fluid">
+    <header class="header">
+        <div class="container">
+            <h1 class="title text-center">49er Health Tracker</h1>
+        </div>
+    </header>
+
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-links">
+                <a class="nav-item" href="{{ url_for('habit_tracking') }}">Habit Tracking</a>
+                <a class="nav-item" href="{{ url_for('nutrition_tracking') }}">Nutrition Tracking</a>
+                <a class="nav-item" href="{{ url_for('fitness_tracking') }}">Fitness Tracking</a>
+                <a class="nav-item" href="{{ url_for('fitness_guide') }}">Fitness Guide</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="content">
+        <section id="fitness-tracking" class="tracker-section">
+            <h2>Fitness Tracking</h2>
+            <label for="exercise">Input the exercise you did today:</label>
+            <input type="text" id="exercise" placeholder="e.g. Running">
+            
+            <label for="duration">Input time spent on this exercise (minutes):</label>
+            <input type="number" id="duration" placeholder="e.g. 30">
+            
+            <p>Steps Today: ___</p>
+            <a href="#">Link to see other days</a>
+            <br>
+            <a href="#">Your Progress</a>
+        </section>
+    </div>
+
+    <footer>
+        <p class="text-center">© 2024 49er Health Tracker</p>
+    </footer>
+</div>
+
+<script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>

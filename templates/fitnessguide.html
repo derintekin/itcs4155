@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Guide</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+<div class="container-fluid">
+    <header class="header">
+        <div class="container">
+            <h1 class="title text-center">49er Health Tracker</h1>
+        </div>
+    </header>
+
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-links">
+                <a class="nav-item" href="{{ url_for('habit_tracking') }}">Habit Tracking</a>
+                <a class="nav-item" href="{{ url_for('nutrition_tracking') }}">Nutrition Tracking</a>
+                <a class="nav-item" href="{{ url_for('fitness_tracking') }}">Fitness Tracking</a>
+                <a class="nav-item" href="{{ url_for('fitness_guide') }}">Fitness Guide</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="content">
+        <section id="fitness-guide" class="tracker-section">
+            <h2>Fitness Guide</h2>
+            <p>Access workout libraries, health resources, and FAQs.</p>
+            <ul>
+                <li><a href="#">Library of Workouts</a></li>
+                <li><a href="#">Health Resources</a></li>
+                <li><a href="#">Fitness FAQs</a></li>
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        <p class="text-center">© 2024 49er Health Tracker</p>
+    </footer>
+</div>
+
+<script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>
