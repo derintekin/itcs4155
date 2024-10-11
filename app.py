@@ -49,5 +49,21 @@ def login():
             # return redirect(url_for('userlogin'))
     return render_template('login.html')
 
+@app.route('/habit')
+def habit_tracking():
+    return render_template('habit.html')
+
+@app.route('/nutrition')
+def nutrition_tracking():
+    return render_template('nutrition.html')
+
+@app.route('/fitness')
+def fitness_tracking():
+    return render_template('fitnesstracker.html')
+
+@app.route('/guide')
+def fitness_guide():
+    return render_template('fitnessguide.html')
+
 if __name__ == '__main__':
     app.run(host="0.0.0.0", debug=True)

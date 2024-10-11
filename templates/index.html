@@ -1,3 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}49er Health Tracker{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+<p>Hello World!</p>
+
+{% endblock %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +16,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
 <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}?v=1">
+<script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+
 </head>
 <body>
 
@@ -18,26 +31,60 @@
     <nav class="navbar">
         <div class="container">
             <div class="nav-links">
-                <a class="nav-item" href="{{ url_for('habit_tracking') }}">Habit Tracking</a>
-                <a class="nav-item" href="{{ url_for('nutrition_tracking') }}">Nutrition Tracking</a>
-                <a class="nav-item" href="{{ url_for('fitness_tracking') }}">Fitness Tracking</a>
-                <a class="nav-item" href="{{ url_for('fitness_guide') }}">Fitness Guide</a>
+                <a class="nav-item" href="#habit-tracking">Habit Tracking</a>
+                <a class="nav-item" href="#nutrition-tracking">Nutrition Tracking</a>
+                <a class="nav-item" href="#fitness-tracking">Fitness Tracking</a>
+                <a class="nav-item" href="#fitness-guide">Fitness Guide</a>
             </div>
         </div>
     </nav>
 
-    <div class="content">
-        <section id="dashboard" class="tracker-section">
-            <h2>Welcome to Your Health Dashboard</h2>
-            <p>Track your health and view your progress across fitness, nutrition, and habits.</p>
+    <div class="content my-4">
+        <p>Welcome to the landing page</p>
+
+        <button onclick="window.location.href='/userlogin'" class="btn btn-primary mb-4">Login</button>
+
+        <section id="calorie-tracker" class="tracker-section">
+            <h2>Calorie Tracker</h2>
+            <div class="form-group">
+                <label for="calories">Enter Calories:</label>
+                <input type="number" id="calories" class="form-control" placeholder="e.g. 500">
+            </div>
+            <button onclick="addCalories()" class="btn btn-success">Add Calories</button>
+            <p class="mt-2">Total Calories: <span id="total-calories" class="font-weight-bold">0</span></p>
+        </section>
+
+        <section id="fitness-tracker" class="tracker-section">
+            <h2>Fitness Tracker</h2>
+            <div class="form-group">
+                <label for="workout">Workout Type:</label>
+                <select id="workout" class="form-control">
+                    <option value="Cardio">Cardio</option>
+                    <option value="Strength">Strength</option>
+                    <option value="Flexibility">Flexibility</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="duration">Duration (minutes):</label>
+                <input type="number" id="duration" class="form-control" placeholder="e.g. 30">
+            </div>
+            <button onclick="addWorkout()" class="btn btn-success">Add Workout</button>
+            
+            <h3 class="mt-4">Workout Log</h3>
+            <ul id="workout-log" class="list-group mt-2"></ul>
+        </section>
+
+        <section id="resource-hub" class="tracker-section">
+            <h2>Resource Hub</h2>
+            <ul class="list-group">
+                <li class="list-group-item"><a href="https://www.healthline.com/nutrition" target="_blank">Nutrition Articles</a></li>
+                <li class="list-group-item"><a href="https://www.fitness.com/" target="_blank">Fitness Articles</a></li>
+                <li class="list-group-item"><a href="https://www.cdc.gov/healthyweight/index.html" target="_blank">CDC Healthy Weight</a></li>
+            </ul>
         </section>
     </div>
-
-    <footer>
-        <p class="text-center">© 2024 49er Health Tracker</p>
-    </footer>
 </div>
 
 <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
-</body>
-</html>
+
+{% endblock %}

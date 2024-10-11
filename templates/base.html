@@ -7,12 +7,22 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
+    <header>
+        <h1>49er Health Tracker</h1>
+        <nav>
+            <a href="{{ url_for('habit_tracking') }}">Habit Tracking</a>
+            <a href="{{ url_for('nutrition_tracking') }}">Nutrition Tracking</a>
+            <a href="{{ url_for('fitness_tracking') }}">Fitness Tracking</a>
+            <a href="{{ url_for('fitness_guide') }}">Fitness Guide</a>
+        </nav>
+    </header>
 
-
-    <!-- Main Content -->
     <div class="container mt-4">
         {% block content %}{% endblock %}
     </div>
 
+    <footer>
+        <p>&copy; 2024 49er Health Tracker. All rights reserved.</p>
+    </footer>
 </body>
 </html>
